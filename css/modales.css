@@ -146,6 +146,8 @@
   margin: 0;
   z-index: 50;
   display: none;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
 .lista-sugerencias.visible {
@@ -185,6 +187,8 @@
   align-items: center !important;
   justify-content: center !important;
   user-select: none;
+  background-color: #f0f1f1;
+  color: #1e1e1e;
 }
 
 .contador button:hover {
@@ -229,6 +233,11 @@ body.dark .barra-modal {
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.05);
 }
 
+body.dark .contador button {
+  background-color: #f0f1f1;
+  color: black;
+}
+
 body.dark .input-wrapper input[type="text"],
 body.dark .barra-modal input[type="number"],
 body.dark .input-wrapper-guest input {
@@ -262,8 +271,9 @@ body.dark .contador small {
 }
 
 body.dark .contador button {
-  color: #f0f0f0 !important;
-  border: 1px solid #555 !important;
+  color: black !important;
+  border: 1px solid #ea5657 !important;
+  background-color: #ea5657;
 }
 
 body.dark .contador button:hover {
@@ -375,4 +385,14 @@ body.dark .contador button:hover {
     background-color: white;
     border-radius: 15px;
   }
+}
+
+.btn-restar,
+.btn-sumar {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  min-height: 28px !important;
+  max-width: 28px !important;
+  max-height: 28px !important;
 }
