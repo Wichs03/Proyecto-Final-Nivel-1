@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  width: 100%;
+  height: 11.7%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5%;
+  gap: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+#toggle-dark {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.barra {
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 12px;
+  width: 25%;
+  max-width: 600px;
+  margin: 0;
+}
+
+.barra input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.input-location {
+  flex: 1;
+}
+
+.input-guests {
+  flex: 1;
+}
+
+.btn-search {
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eb5757;
+  stroke: #eb5757;
+}
+
+.btn-search img {
+  width: 16px;
+  height: 16px;
+  color: #eb5757;
+  stroke: #eb5757;
+}
+
+.btn-search svg {
+  width: 16px;
+  height: 16px;
+  color: #eb5757;
+  stroke: #eb5757;
+}
+
+.separator {
+  width: 1px;
+  height: 24px;
+  background-color: #f2f2f2;
+}
+
+main {
+  width: 100%;
+  height: calc(100% - 11.7%);
+}
+
+.encabezado {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  align-items: center;
+}
+
+.tituloFijo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.numeroStays {
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+}
+
+.contenedor {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2.5%;
+  justify-content: center;
+}
+
+article {
+  width: 28.5%;
+  aspect-ratio: 409/393;
+}
+
+article img {
+  width: 100%;
+  height: 82.3%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.caracteristicas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.superHost {
+  border: 1.5px solid #4f4f4f;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.type,
+.beds,
+.rating {
+  margin-right: 10px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.starIcon {
+  stroke: #ea5756;
+  fill: #ea5756;
+  width: 16px;
+  height: 16px;
+}
+
+/*dark*/
+/*dark*/
+/*dark*/
+
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark header,
+body.dark nav,
+body.dark .barra {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .barra input {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+
+body.dark .btn-search svg,
+body.dark .btn-search {
+  color: #e57373;
+  stroke: #e57373;
+}
+
+body.dark .separator {
+  background-color: #333;
+}
+
+body.dark .tituloFijo,
+body.dark .numeroStays,
+body.dark .caracteristicas,
+body.dark .superHost,
+body.dark .rating {
+  color: #e0e0e0;
+}
+
+body.dark article img {
+  filter: brightness(0.85);
+}
+
+/*RESPONSIVE*/
+/*RESPONSIVE*/
+/*RESPONSIVE*/
+
+@media (max-width: 1023px) {
+  .encabezado {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .contenedor {
+    gap: 4%;
+  }
+
+  article {
+    width: 42%; /* para que entren dos en línea con algo de gap */
+  }
+
+  .barra {
+    width: 40%;
+  }
+
+  article {
+    aspect-ratio: 3/2.5;
+  }
+}
+
+@media (max-width: 767px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .logo {
+    align-self: flex-start;
+  }
+
+  article {
+    width: 90%;
+  }
+
+  .barra {
+    width: 85%;
+  }
+}

@@ -1,13 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/styles/output.css">
-    <script src="./src/scripts/main.js" defer></script>
-    <title>PF Windbnd Vanilla</title>
-</head>
-<body>
-    <h1 class="bg-slate-800 text-white text-2xl">Hola mundo!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/modales.css" />
+    <script type="module" src="./scripts/main.js"></script>
+    <title>Windbnb</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#" class="logo"
+          ><img src="./icons/logo-f7862584.svg" alt=""
+        /></a>
+        <button id="toggle-dark">🌙</button>
+        <div class="barra">
+          <input
+            type="text"
+            class="input-location"
+            placeholder="Add location"
+            readonly
+          />
+          <div class="separator"></div>
+          <input
+            type="text"
+            class="input-guests"
+            placeholder="Add guests"
+            readonly
+          />
+          <div class="separator"></div>
+          <button class="btn-search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon-search"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="encabezado">
+        <h2 class="tituloFijo">Stays in Finland</h2>
+        <h3 class="numeroStays"></h3>
+      </section>
+      <section class="contenedor"></section>
+    </main>
+    <div class="modal-filtros oculto" id="modalFiltros">
+      <div class="contenido-modal">
+        <div class="barra-modal">
+          <div class="inputs-container">
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="ciudad"
+                placeholder="Add location"
+                autocomplete="off"
+              />
+              <ul id="listaSugerencias" class="lista-sugerencias"></ul>
+            </div>
+
+            <hr class="separator-horizontal" />
+
+            <div class="input-wrapper-guest" style="position: relative">
+              <input
+                type="number"
+                id="huespedes"
+                min="1"
+                placeholder="Add guests"
+                readonly
+              />
+
+              <div
+                id="contador-guest"
+                style="margin-top: 8px; display: flex; gap: 20px"
+              >
+                <div
+                  class="contador"
+                  style="display: flex; flex-direction: column; gap: 4px"
+                >
+                  <span>Adults</span>
+                  <small style="font-size: 10px; color: #888"
+                    >Ages 13 or above</small
+                  >
+                  <div style="display: flex; align-items: center; gap: 8px">
+                    <button class="btn-restar" data-type="adult">-</button>
+                    <span id="adult-count">0</span>
+                    <button class="btn-sumar" data-type="adult">+</button>
+                  </div>
+                </div>
+
+                <div
+                  class="contador"
+                  style="display: flex; flex-direction: column; gap: 4px"
+                >
+                  <span>Children</span>
+                  <small style="font-size: 10px; color: #888">Ages 2–12</small>
+                  <div style="display: flex; align-items: center; gap: 8px">
+                    <button class="btn-restar" data-type="child">-</button>
+                    <span id="child-count">0</span>
+                    <button class="btn-sumar" data-type="child">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-aplicar" id="btnAplicar">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon-lupa"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 21l-4.35-4.35m1.5-5.25a6.75 6.75 0 11-13.5 0 6.75 6.75 0 0113.5 0z"
+              />
+            </svg>
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
