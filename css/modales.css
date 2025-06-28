@@ -44,7 +44,7 @@
   position: relative;
   z-index: 10;
   padding-left: 0;
-  margin-top: -30%;
+  margin-top: 0;
 }
 
 .inputs-container,
